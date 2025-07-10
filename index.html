@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RR Telecom</title>
+    <link rel="stylesheet" href="assests/css/style.css" />
+    <link rel="stylesheet" href="assests/bootstrap5/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <header style="position: fixed" class="navbar">
+      <div class="container">
+        <div class="logo w-30">
+          <img
+            width="100%"
+            src="assests/images/loqo.png"
+            alt="RR Telecom Logo"
+          />
+        </div>
+        <nav style="width: 50%" class="menu">
+          <a href="#">ANA SƏHİFƏ</a>
+          <a href="#">HAQQIMIZDA</a>
+          <a href="#">XİDMƏTLƏR</a>
+          <a href="#">ÖDƏNİŞ</a>
+          <a href="#">ƏLAQƏ</a>
+        </nav>
+        <div class="hamburger" id="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="close-menu" id="close-menu">&times;</div>
+        <div class="contact">
+          <span>📞 +994 12 377 37 73</span><br />
+         
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="text-content">
+        <h1>Sürətli və keyfiyyətli<br />internet sizə çox yaxındır</h1>
+      </div>
+      <div class="arrows">
+        <button class="arrow-btn">↑</button>
+        <button class="arrow-btn">↓</button>
+      </div>
+    </section>
+    <section class="services-section">
+      <div class="container services-cards">
+        <div class="service-card">
+          <img
+            class="service-img"
+            src="assests/images/internet.jpg"
+            alt="Internet"
+          />
+          <div class="service-icon">
+            <img src="assests/images/internet.jpg" alt="icon" />
+          </div>
+          <div class="service-title">İnternet</div>
+          <div class="service-desc">
+            Sürətli və etibarlı fiber-optik internet xidmətləri.
+          </div>
+        </div>
+        <div class="service-card">
+          <img class="service-img" src="assests/images/iptv.jpg" alt="IP TV" />
+          <div class="service-icon">
+            <img src="assests/images/iptv.jpg" alt="icon" />
+          </div>
+          <div class="service-title">İP TV</div>
+          <div class="service-desc">
+            200+ TV kanal, HD keyfiyyət və rahat idarəetmə.
+          </div>
+        </div>
+        <div class="service-card">
+          <img
+            class="service-img"
+            src="assests/images/corporate.jpg"
+            alt="Korporativ"
+          />
+          <div class="service-icon">
+            <img src="assests/images/corp-icon.svg" alt="icon" />
+          </div>
+          <div class="service-title">Korporativ hallar</div>
+          <div class="service-desc">
+            Şirkətlər üçün xüsusi internet və TV həlləri.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="tariffs-section">
+      <h2 class="tariffs-title">Tariflər</h2>
+     
+      <div class="tariffs-cards-group">
+        <div class="tariffs-cards" id="cards-internet">
+          <div class="tariff-card">
+            <div class="tariff-name">Gold</div>
+            <div class="tariff-price">
+              <span class="price">18</span><span class="azn">₼</span>
+            </div>
+            <div class="tariff-speed">60 Mbps</div>
+            <button class="tariff-join">QOŞUL</button>
+          </div>
+          <div class="tariff-card">
+            <div class="tariff-name">Silver</div>
+            <div class="tariff-price">
+              <span class="price">20</span><span class="azn">₼</span>
+            </div>
+            <div class="tariff-speed">70 Mbps</div>
+            <button class="tariff-join">QOŞUL</button>
+          </div>
+          <div class="tariff-card">
+            <div class="tariff-name">RR</div>
+            <div class="tariff-price">
+              <span class="price">25</span><span class="azn">₼</span>
+            </div>
+            <div class="tariff-speed">100 Mbps</div>
+            <button class="tariff-join">QOŞUL</button>
+          </div>
+          <!-- <div class="tariff-card">
+            <div class="tariff-name">RR</div>
+            <div class="tariff-price">
+              <span class="price">25</span><span class="azn">₼</span>
+            </div>
+            <div class="tariff-speed">100 Mbps</div>
+            <button class="tariff-join">QOŞUL</button>
+          </div> -->
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="contact-section container">
+      <div class="contact-form-box">
+        <h2 class="contact-title">Mənə zəng edin</h2>
+        <div class="contact-title-underline"></div>
+        <form class="contact-form">
+          <input type="text" placeholder="Ad" required />
+          <input type="tel" placeholder="Telefon nömrəsi" required />
+          <textarea placeholder="Mətn" rows="5" required></textarea>
+          <button type="submit">Sorğu göndər</button>
+        </form>
+      </div>
+      <div class="contact-image-box">
+        <img src="assests/images/call.jpg" alt="Ofis şəkli" />
+      </div>
+    </section>
+
+    <section class="faq-section container">
+      <h2 class="faq-title">Ən çox verilən suallar</h2>
+      <div class="faq-title-underline"></div>
+      <div class="faq-list">
+        <div class="faq-item active">
+          <div class="faq-question">
+            RR Telecom” abunəçisi olmaq üçün nə etməliyəm?
+            <span class="faq-toggle">-</span>
+          </div>
+          <div class="faq-answer">
+            Sifarişiniz qəbul olunduqdan sonra 3 iş günü ərzində Sizinlə əlaqə
+            saxlanılıb qoşulmanın dəqiq vaxtı haqqında məlumat veriləcək. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta, rem.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            RR Telecom-un üstünlüyü nədən ibarətdir? 
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            RR Telecom yüksək sürətli internet, 24/7 dəstək və sərfəli tariflər
+            təklif edir. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis atque ipsam sunt ipsa labore cumque optio explicabo delectus similique et. Maiores, similique quod doloribus dignissimos laborum iste minima excepturi cumque!
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="main-footer">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h3>RR Telecom</h3>
+          <div class="footer-title-underline"></div>
+          <p>Bakı ş., Abbas Mirzə Şərifzadə küçəsi,<br />230A-233, Mərtəbə 4</p>
+          <a href="tel:+994123773773" class="footer-phone">+994 12 377 37 73</a
+          ><br />
+          <a href="tel:+994773105225" class="footer-phone">+994 77 310 52 25</a
+          ><br />
+          <a href="mailto:info@RRtelecom.com" class="footer-mail"
+            >info@RRtelecom.com</a
+          ><br />
+          <a href="#" class="footer-link">e-şikayət</a>
+        </div>
+        <div class="footer-decor"></div>
+        <div class="footer-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.858282150881!2d49.80825231535444!3d40.3972189793657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d1e2e2b2b2b%3A0x2b2b2b2b2b2b2b2b!2sBulud%20Telecom!5e0!3m2!1sen!2saz!4v1680000000000!5m2!1sen!2saz"
+            width="100%"
+            height="320"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-line"></div>
+        <div class="footer-copyright mt-3 mb-3">© 2025 RR Telecom MMC</div>
+      </div>
+    </footer>
+    <script src="assests/bootstrap5/js/bootstrap.bundle.js"></script>
+    <script>
+      const hamburger = document.getElementById("hamburger-menu");
+      const menu = document.querySelector(".menu");
+      const closeMenu = document.getElementById("close-menu");
+      const navbar = document.querySelector(".navbar");
+
+      hamburger.addEventListener("click", function () {
+        menu.classList.add("active");
+        menu.classList.add("overlay");
+        hamburger.style.display = "none";
+        closeMenu.style.display = "block";
+      });
+      closeMenu.addEventListener("click", function () {
+        menu.classList.remove("active");
+        menu.classList.remove("overlay");
+        hamburger.style.display = "flex";
+        closeMenu.style.display = "none";
+      });
+      // İlk açılışda X ikonu gizli olsun
+      closeMenu.style.display = "none";
+
+      // Navbar sticky və animasiya üçün scroll event
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 10) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+    
+
+      // FAQ accordion funksionallığı
+      document.querySelectorAll(".faq-question").forEach(function (q) {
+        q.addEventListener("click", function () {
+          const item = q.parentElement;
+          const isActive = item.classList.contains("active");
+          document.querySelectorAll(".faq-item").forEach(function (i) {
+            i.classList.remove("active");
+            i.querySelector(".faq-toggle").textContent = "+";
+          });
+          if (!isActive) {
+            item.classList.add("active");
+            item.querySelector(".faq-toggle").textContent = "-";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
