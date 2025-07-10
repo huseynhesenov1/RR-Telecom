@@ -134,10 +134,20 @@
       <div class="contact-form-box">
         <h2 class="contact-title">Mənə zəng edin</h2>
         <div class="contact-title-underline"></div>
-        <form class="contact-form">
-          <input type="text" placeholder="Ad" required />
-          <input type="tel" placeholder="Telefon nömrəsi" required />
-          <textarea placeholder="Mətn" rows="5" required></textarea>
+        <!-- <form class="contact-form" id="form-control">
+
+
+          <input type="text"  name="name" placeholder="Ad" required />
+          <input type="tel" name="phone" placeholder="Telefon nömrəsi" required />
+          <textarea placeholder="Mətn"  name="message" rows="5" required></textarea>
+
+          <button id="contact-form" type="submit">Sorğu göndər</button>
+
+        </form> -->
+        <form id="contact-form" class="contact-form">
+          <input type="text" name="name" placeholder="Ad" required />
+          <input type="tel" name="phone" placeholder="Telefon nömrəsi" required />
+          <textarea name="message" placeholder="Mətn" rows="5" required></textarea>
           <button type="submit">Sorğu göndər</button>
         </form>
       </div>
@@ -206,6 +216,54 @@
       </div>
     </footer>
     <script src="assests/bootstrap5/js/bootstrap.bundle.js"></script>
+    <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script src="assests/js/script.js"></script>
+    <!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script> -->
+    <script>
+    
+      (function() {
+        emailjs.init({
+          publicKey: "YM2n37fNT2wuBPd5S", // emailjs.com-dan
+        });
+      })();
+    
+      window.onload = function () {
+        const form = document.getElementById("contact-form");
+        const formInputs = document.querySelectorAll("#contact-form input, #contact-form textarea");
+    
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+    
+          // Form daxilindəki input-ların boş olub-olmadığını yoxlayırıq
+          let empty = false;
+          formInputs.forEach(input => {
+            if (!input.value.trim()) {
+              empty = true;
+            }
+          });
+    
+          if (empty) {
+            alert("Zəhmət olmasa bütün xanaları doldurun.");
+            return;
+          }
+    
+          // EmailJS vasitəsilə göndər
+          emailjs.sendForm("service_6rbyrzt", "template_f8nkvds", this)
+            .then(() => {
+              alert("Mesaj göndərildi!");
+              form.reset(); // Formu təmizlə
+            }, (error) => {
+              console.error("FAILED...", error);
+              console.error("Xəta:", error);
+              alert("Göndərmə zamanı xəta baş verdi.");
+            });
+        });
+      };
+    </script>
+    
     <script>
       const hamburger = document.getElementById("hamburger-menu");
       const menu = document.querySelector(".menu");
