@@ -1,0 +1,73 @@
+.about-section {
+    padding: 60px 0;
+  }
+  
+  .about-text h2 {
+    font-weight: 700;
+    margin-bottom: 25px;
+    font-size: 36px;
+  }
+  
+  .about-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: justify;
+    color: #333;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .about-image img {
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .about-image img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Animasiya */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .custom-footer {
+    padding: 30px 0;
+    background-color: #fff;
+  }
+  
+  .footer-line {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-text {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .line {
+    height: 1px;
+    background-color: #ccc;
+    flex: 1;
+    max-width: 150px;
+  }
+  
+  .diamond {
+    width: 10px;
+    height: 10px;
+    background-color: #e2e2e2;
+    transform: rotate(45deg);
+    margin: 0 10px;
+  }
+  
