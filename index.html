@@ -6,8 +6,34 @@
     <title>RR Telecom</title>
     <link rel="stylesheet" href="assests/css/style.css" />
     <link rel="stylesheet" href="assests/bootstrap5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  #preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#preloader img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+
+  /* object-fit: contain; */
+}
+</style>
   </head>
   <body>
+    <div id="preloader">
+      <img src="assests/images/preloaderr.gif" alt="Loading..." />
+    </div>
     <header style="position: fixed" class="navbar">
       <div class="container">
         <div class="logo w-30">
@@ -20,8 +46,8 @@
         <nav style="width: 50%" class="menu">
           <a href="index.html">ANA SƏHİFƏ</a>
           <a href="assests/pages/about.html">HAQQIMIZDA</a>
-          <a href="#">XİDMƏTLƏR</a>
-          <a href="#">ÖDƏNİŞ</a>
+          <a href="assests/pages/service.html">XİDMƏTLƏR</a>
+          <a href="assests/pages/payment.html">ÖDƏNİŞ</a>
           <a href="assests/pages/contact.html">ƏLAQƏ</a>
         </nav>
         <div class="hamburger" id="hamburger-menu">
@@ -31,7 +57,7 @@
         </div>
         <div class="close-menu" id="close-menu">&times;</div>
         <div class="contact">
-          <span>📞 +994 55 507 92 27</span><br />
+          <span style="color: black;"><i style="color: #069fde ;" class="fas fa-phone"></i> +994 55 507 92 27</span><br />
          
         </div>
       </div>
@@ -89,14 +115,14 @@
       </div>
     </section>
     <section class="tariffs-section">
-      <h2 class="tariffs-title">Tariflər</h2>
+      <h2 class="tariffs-title">Məhşur Tariflər</h2>
      
       <div class="tariffs-cards-group">
         <div class="tariffs-cards" id="cards-internet">
           <div class="tariff-card">
             <div class="tariff-name">Gold</div>
             <div class="tariff-price">
-              <span class="price">18</span><span class="azn">₼</span>
+              <span class="price">20</span><span class="azn">₼</span>
             </div>
             <div class="tariff-speed">60 Mbps</div>
             <button class="tariff-join">QOŞUL</button>
@@ -104,7 +130,7 @@
           <div class="tariff-card">
             <div class="tariff-name">Silver</div>
             <div class="tariff-price">
-              <span class="price">20</span><span class="azn">₼</span>
+              <span class="price">25</span><span class="azn">₼</span>
             </div>
             <div class="tariff-speed">70 Mbps</div>
             <button class="tariff-join">QOŞUL</button>
@@ -112,19 +138,12 @@
           <div class="tariff-card">
             <div class="tariff-name">RR</div>
             <div class="tariff-price">
-              <span class="price">25</span><span class="azn">₼</span>
+              <span class="price">30</span><span class="azn">₼</span>
             </div>
             <div class="tariff-speed">100 Mbps</div>
             <button class="tariff-join">QOŞUL</button>
           </div>
-          <!-- <div class="tariff-card">
-            <div class="tariff-name">RR</div>
-            <div class="tariff-price">
-              <span class="price">25</span><span class="azn">₼</span>
-            </div>
-            <div class="tariff-speed">100 Mbps</div>
-            <button class="tariff-join">QOŞUL</button>
-          </div> -->
+          
         </div>
         
       </div>
@@ -174,33 +193,7 @@
       </div>
     </section>
     <footer class="main-footer">
-      <div class="footer-content">
-        <div class="footer-info">
-          <h3>RR Telecom</h3>
-          <div class="footer-title-underline"></div>
-          <p>Bakı ş., Abbas Mirzə Şərifzadə küçəsi,<br />230A-233, Mərtəbə 4</p>
-          <a href="tel:+994123773773" class="footer-phone">+994 12 377 37 73</a
-          ><br />
-          <a href="tel:+994773105225" class="footer-phone">+994 77 310 52 25</a
-          ><br />
-          <a href="mailto:info@RRtelecom.com" class="footer-mail"
-            >info@RRtelecom.com</a
-          ><br />
-          <a href="#" class="footer-link">e-şikayət</a>
-        </div>
-        <div class="footer-decor"></div>
-        <div class="footer-map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.858282150881!2d49.80825231535444!3d40.3972189793657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d1e2e2b2b2b%3A0x2b2b2b2b2b2b2b2b!2sBulud%20Telecom!5e0!3m2!1sen!2saz!4v1680000000000!5m2!1sen!2saz"
-            width="100%"
-            height="320"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-      </div>
+    
       <div class="footer-bottom">
         <div class="footer-line"></div>
         <div class="footer-copyright mt-3 mb-3">© 2025 RR Telecom MMC</div>
@@ -212,7 +205,20 @@
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
     <script src="assests/js/script.js"></script>
-    <!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script> -->
+    <script>
+      window.addEventListener("load", function () {
+        setTimeout(() => {
+          const preloader = document.getElementById("preloader");
+          if (preloader) {
+            preloader.style.opacity = "0";
+            preloader.style.transition = "opacity 0.5s ease";
+            setTimeout(() => {
+              preloader.style.display = "none";
+            }, 500);
+          }
+        }, 2000); // 2 saniyəlik yükləmə vaxtı
+      });
+    </script>
     <script>
     
       (function() {
@@ -228,7 +234,6 @@
         form.addEventListener("submit", function (event) {
           event.preventDefault();
     
-          // Form daxilindəki input-ların boş olub-olmadığını yoxlayırıq
           let empty = false;
           formInputs.forEach(input => {
             if (!input.value.trim()) {

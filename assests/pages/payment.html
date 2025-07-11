@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RR Telecom - ÖDƏNİŞ</title>
+  <link rel="stylesheet" href="/assests/css/payment.css " />
+  
+  <link rel="stylesheet" href="../bootstrap5/css/bootstrap.min.css" />
+ 
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+    <header style="position: fixed" class="navbar">
+        <div class="container">
+          <div class="logo w-30">
+            <img
+              width="100%"
+              src="../images/loqo.png"
+              alt="RR Telecom Logo"
+            />
+          </div>
+          <nav style="width: 50%" class="menu">
+            <a href="../../index.html">ANA SƏHİFƏ</a>
+            <a href="about.html">HAQQIMIZDA</a>
+            <a href="service.html">XİDMƏTLƏR</a>
+            <a href="payment.html">ÖDƏNİŞ</a>
+            <a href="contact.html">ƏLAQƏ</a>
+          </nav>
+          <div class="hamburger" id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="close-menu" id="close-menu">&times;</div>
+          <div class="contact">
+            <span style="color: black;"><i style="color: #069fde ;" class="fas fa-phone"></i> +994 55 507 92 27</span><br />
+           
+          </div>
+        </div>
+      </header>
+
+
+      <div class="container text-center my-5">
+        <h2 class="fw-bold">Ödəniş</h2>
+        <p class="mb-4">Aylıq ödənişləri onlayn və ya ödəniş terminalları üzərindən yerinə yetirə bilərsiniz</p>
+    
+        <!-- Toggle buttons -->
+        <div class="mb-4">
+          <button class="tab-btn active" id="onlineBtn">Onlayn ödəniş</button>
+          <button class="tab-btn" id="terminalBtn">Ödəniş terminalları</button>
+        </div>
+    
+        <!-- Cards Wrapper -->
+        <div class="row g-4" id="cardWrapper">
+          <!-- Cards gələcək buraya -->
+        </div>
+      </div>
+
+      <script>
+        const cardWrapper = document.getElementById("cardWrapper");
+        const onlineBtn = document.getElementById("onlineBtn");
+        const terminalBtn = document.getElementById("terminalBtn");
+    
+        const onlineCards = [
+          { name: "Fpay", img: "../images/fpay.svg", link: "#" },
+          { name: "Hesab.az", img: "../images/hesabaz.png", link: "#" },
+          { name: "EPUL", img: "../images/epul.png", link: "#" },
+          { name: "Mpay", img: "../images/mpay.svg", link: "#" },
+          { name: "Milliön", img: "../images/million.jpeg", link: "#" },
+          { name: "Bir bank", img: "../images/1bank.svg", link: "#" }
+        ];
+    
+        const terminalCards = [
+          { name: "Emanat", img: "../images/emenat.jpeg", link: "#" },
+          { name: "Milliön", img: "../images/million.jpeg", link: "#" },
+          { name: "Kassam", img: "../images/kassam.png", link: "#" },
+          { name: "Expresspay", img: "../images/expresspay.svg", link: "#" },
+        //   { name: "Paypoint", img: "https://yourdomain.com/paypoint.png", link: "#" }
+        ];
+    
+        function renderCards(cards) {
+          cardWrapper.innerHTML = '';
+          cards.forEach(card => {
+            const col = document.createElement("div");
+            col.className = "col-12 col-sm-6 col-md-4 col-lg-3";
+            col.innerHTML = `
+              <a href="${card.link}" target="_blank" class="text-decoration-none text-dark">
+                <div class="card payment-card p-3 h-100 d-flex flex-column justify-content-center align-items-center">
+                  <img src="${card.img}" alt="${card.name}" class="img-fluid mb-3" />
+                  
+                </div>
+              </a>
+            `;
+            cardWrapper.appendChild(col);
+          });
+        }
+        
+    
+        // İlk olaraq onlayn kartlar göstərilsin
+        renderCards(onlineCards);
+    
+        onlineBtn.addEventListener("click", () => {
+          renderCards(onlineCards);
+          onlineBtn.classList.add("active");
+          terminalBtn.classList.remove("active");
+        });
+    
+        terminalBtn.addEventListener("click", () => {
+          renderCards(terminalCards);
+          terminalBtn.classList.add("active");
+          onlineBtn.classList.remove("active");
+        });
+      </script>
+</body>
+</html>
