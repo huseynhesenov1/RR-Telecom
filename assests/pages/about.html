@@ -94,5 +94,35 @@
           </div>
       </footer>
     <script src="../bootstrap5/js/bootstrap.bundle.js"></script>
+    <script>
+        const hamburger = document.getElementById("hamburger-menu");
+      const menu = document.querySelector(".menu");
+      const closeMenu = document.getElementById("close-menu");
+      const navbar = document.querySelector(".navbar");
+
+      hamburger.addEventListener("click", function () {
+        menu.classList.add("active");
+        menu.classList.add("overlay");
+        hamburger.style.display = "none";
+        closeMenu.style.display = "block";
+      });
+      closeMenu.addEventListener("click", function () {
+        menu.classList.remove("active");
+        menu.classList.remove("overlay");
+        hamburger.style.display = "flex";
+        closeMenu.style.display = "none";
+      });
+      // İlk açılışda X ikonu gizli olsun
+      closeMenu.style.display = "none";
+
+      // Navbar sticky və animasiya üçün scroll event
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 10) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+    </script>
 </body>
 </html>
