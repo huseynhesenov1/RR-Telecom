@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RR Telecom - Contact</title>
+  <link rel="stylesheet" href="/assests/css/contact.css" />
+  
+  <link rel="stylesheet" href="../bootstrap5/css/bootstrap.min.css" />
+  
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+    <header style="position: fixed" class="navbar">
+        <div class="container">
+          <div class="logo w-30">
+            <img
+              width="100%"
+              src="../images/loqo.png"
+              alt="RR Telecom Logo"
+            />
+          </div>
+          <nav style="width: 50%" class="menu">
+            <a href="../../index.html">ANA SƏHİFƏ</a>
+            <a href="about.html">HAQQIMIZDA</a>
+            <a href="#">XİDMƏTLƏR</a>
+            <a href="#">ÖDƏNİŞ</a>
+            <a href="contact.html">ƏLAQƏ</a>
+          </nav>
+          <div class="hamburger" id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="close-menu" id="close-menu">&times;</div>
+          <div class="contact">
+            <span>📞 +994 55 507 92 27</span><br />
+           
+          </div>
+        </div>
+      </header>
+
+
+  <div style="margin-top: 100px;" class="test container">
+    <div class="contact-details">
+      <h2>Contact Details</h2>
+
+      <div class="contact-item">
+        <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
+        <p><strong>505 North State Street, London,</strong><br>United Kingdom</p>
+      </div>
+
+      <div class="contact-item">
+        <div class="icon-circle"><i class="fas fa-phone"></i></div>
+        <p>+9684-32-45-789<br>+9684 32 45 789</p>
+      </div>
+
+      <div class="contact-item">
+        <div class="icon-circle"><i class="fas fa-envelope"></i></div>
+        <p>domain@info.com<br>info@mail.com</p>
+      </div>
+
+      <p class="working-hours">Working hours <span>08:00 - 22:00</span></p>
+
+      <div class="social-icons">
+        <a  href="#"><i class="fab fa-facebook-f blue-dark"></i></a>
+        <a href="#"><i class="fab fa-instagram blue"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in teal"></i></a>
+        <a href="#"><i class="fab fa-tiktok red"></i></a>
+      </div>
+    </div>
+
+    <div class="map-container">
+        <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.858282150881!2d49.80825231535444!3d40.3972189793657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d1e2e2b2b2b%3A0x2b2b2b2b2b2b2b2b!2sBulud%20Telecom!5e0!3m2!1sen!2saz!4v1680000000000!5m2!1sen!2saz"
+        width="100%"
+        height="500"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+
+
+  <div class="form-section">
+    <h2>Send a Message</h2>
+    <form id="contact-form" class="contact-form" >
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="tel" name="phone" placeholder="Phone" required>
+      </div>
+      <textarea name="message" placeholder="Write Your Message..." rows="6" required></textarea>
+      <button type="submit">SUBMIT NOW</button>
+    </form>
+  </div>
+
+  <script src="../bootstrap5/js/bootstrap.bundle.js"></script>
+ 
+  <script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    (function () {
+      emailjs.init({
+        publicKey: "YM2n37fNT2wuBPd5S", 
+      });
+    })();
+  
+    window.onload = function () {
+      const form = document.getElementById("contact-form");
+      const formInputs = document.querySelectorAll("#contact-form input, #contact-form textarea");
+  
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+  
+        let empty = false;
+        formInputs.forEach(input => {
+          if (!input.value.trim()) {
+            empty = true;
+          }
+        });
+  
+        if (empty) {
+          Swal.fire({
+            icon: 'warning',
+            title: 'Xəbərdarlıq',
+            text: 'Zəhmət olmasa bütün xanaları doldurun!',
+          });
+          return;
+        }
+  
+        emailjs.sendForm("service_6rbyrzt", "template_f8nkvds", this)
+          .then(() => {
+            Swal.fire({
+              icon: 'success',
+              title: 'Uğurla göndərildi!',
+              text: 'Mesajınız uğurla göndərildi.',
+            });
+            form.reset();
+          }, (error) => {
+            console.error("FAILED...", error);
+            Swal.fire({
+              icon: 'error',
+              title: 'Xəta baş verdi!',
+              text: 'Mesaj göndərilə bilmədi. Zəhmət olmasa yenidən cəhd edin.',
+            });
+          });
+      });
+    };
+  </script>
+ 
+  
+  <script>
+     const hamburger = document.getElementById("hamburger-menu");
+      const menu = document.querySelector(".menu");
+      const closeMenu = document.getElementById("close-menu");
+      const navbar = document.querySelector(".navbar");
+
+      hamburger.addEventListener("click", function () {
+        menu.classList.add("active");
+        menu.classList.add("overlay");
+        hamburger.style.display = "none";
+        closeMenu.style.display = "block";
+      });
+      closeMenu.addEventListener("click", function () {
+        menu.classList.remove("active");
+        menu.classList.remove("overlay");
+        hamburger.style.display = "flex";
+        closeMenu.style.display = "none";
+      });
+      // İlk açılışda X ikonu gizli olsun
+      closeMenu.style.display = "none";
+
+      // Navbar sticky və animasiya üçün scroll event
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 10) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+  </script>
+</body>
+</html>
