@@ -60,7 +60,7 @@
     height: 1px;
     background-color: #ccc;
     flex: 1;
-    max-width: 150px;
+    /* max-width: 150px; */
   }
   
   .diamond {
@@ -71,3 +71,134 @@
     margin: 0 10px;
   }
   
+
+  .navbar {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar.scrolled {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .logo img {
+    height: 60px;
+    width: auto;
+  }
+
+  .menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .menu a {
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+  }
+
+  .menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: #007aff;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .menu a:hover::after {
+    width: 100%;
+  }
+
+  .hamburger, .close-menu {
+    display: none;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    margin: 5px;
+    background: #007aff;
+    border-radius: 3px;
+  }
+
+  .contact {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .contact i {
+    color: #007aff;
+  }
+
+  /* Responsive */
+  @media (max-width: 991px) {
+    .menu {
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #fff;
+      justify-content: center;
+      gap: 30px;
+      transform: translateY(-100%);
+      transition: transform 0.5s ease, opacity 0.4s;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1200;
+    }
+
+    .menu.active {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1300;
+    }
+
+    .close-menu {
+      display: block;
+      position: fixed;
+      top: 20px;
+      right: 25px;
+      font-size: 32px;
+      color: #111;
+      z-index: 1400;
+    }
+
+    .contact {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .hamburger, .close-menu {
+      display: none !important;
+    }
+  }
